@@ -1,5 +1,7 @@
 # Ready-to-go Python scripts for Archicad
 
+[Download version 25.1](https://github.com/tlorantfy/archicad-python-scripts/archive/refs/tags/25.1.zip)
+
 ## recurring_publish.py
 
 ### Description
@@ -7,7 +9,7 @@ The script can schedule recurring publishing.
 The related Archicad project must be opened before executing the script, because the script retrieves the projectdata during the start-up of the script.
 
 Additional JSON Commands Add-On (version 25.1 or later) is required to run.  
-Download it from here: https://github.com/tlorantfy/archicad-additional-json-commands/releases
+Download the Add-On from here: https://github.com/tlorantfy/archicad-additional-json-commands/releases
 
 ### Features
 
