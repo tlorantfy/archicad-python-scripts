@@ -16,7 +16,7 @@ The related Archicad project must be opened before executing the script, because
 * User can choose from the Publisher Sets. Only the selected sets will be published. Multiple choice is available.
 * Recur time can be set in minutes.
 * Continuous progress report, the remaining time till the next publishing countdown appears.
-* Works for Teamwork (BIMcloud) projects also.
+* Works for Teamwork (BIMcloud) projects also. A receive command is executed before each publishing.
 
 ### Usage
 
