@@ -8,8 +8,7 @@
 The script can schedule recurring publishing.  
 The related Archicad project must be opened before executing the script, because the script retrieves the projectdata during the start-up of the script.
 
-Additional JSON Commands Add-On (version 25.1 or later) is required to run.  
-Download the Add-On from here: https://github.com/tlorantfy/archicad-additional-json-commands/releases
+[Additional JSON/Python Commands Add-On](https://github.com/tlorantfy/archicad-additional-json-commands/releases) (version 25.1 or later) is required to run.
 
 ### Features
 
@@ -21,7 +20,7 @@ Download the Add-On from here: https://github.com/tlorantfy/archicad-additional-
 
 ### Usage
 
-1. Running Archicad instance is required with an opened project.
+1. Running Archicad instance is required with an opened project and loaded [Additional JSON/Python Commands Add-On](https://github.com/tlorantfy/archicad-additional-json-commands/releases).
 2. Run recurring_publish.py script from command line and with using python launcher.
 3. Select Publisher Sets to publish.
 4. Set time (in minutes) for recurring.
