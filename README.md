@@ -14,6 +14,7 @@ Archicad will be shut down after each publishing and it will be restarted before
 * User can choose from the Publisher Sets. Only the selected sets will be published. Multiple choice is available.
 * Recur time can be set in minutes.
 * Continuous progress report, the remaining time till the next publishing countdown appears.
+* Works for Teamwork (BIMcloud) projects also.
 
 ### Demo video
 Click to watch the demo video:
