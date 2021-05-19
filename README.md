@@ -1,4 +1,3 @@
-# archicad-python-scripts
 # Ready-to-go Python scripts for Archicad.
 
 ## recurring_publish.py
