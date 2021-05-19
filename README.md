@@ -1,16 +1,18 @@
 # Ready-to-go Python scripts for Archicad.
 
+
+
 ## recurring_publish.py
 
 ### Description
-The script can schedule recurring publishing.
-
+The script can schedule recurring publishing.  
 The related Archicad project must be opened before executing the script, because the script retrieves the projectdata during the start-up of the script.
 
-Archicad will be shut down after each publishing and it will be restarted before each publishing, the project will be reloaded. 
+Additional JSON Commands Add-On (version 25.1 or later) is required to run. Download it from here: https://github.com/tlorantfy/archicad-additional-json-commands/releases
 
 ### Features
 
+* Archicad will be shut down after each publishing and it will be restarted before each publishing, the project will be reloaded automatically.
 * User can choose from the Publisher Sets. Only the selected sets will be published. Multiple choice is available.
 * Recur time can be set in minutes.
 * Continuous progress report, the remaining time till the next publishing countdown appears.
