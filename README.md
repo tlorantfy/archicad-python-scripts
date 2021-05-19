@@ -19,6 +19,14 @@ Download the Add-On from here: https://github.com/tlorantfy/archicad-additional-
 * Continuous progress report, the remaining time till the next publishing countdown appears.
 * Works for Teamwork (BIMcloud) projects also.
 
+### Usage
+
+1. Running Archicad instance is required with an opened project.
+2. Run recurring_publish.py script from command line and with using python launcher.
+3. Select Publisher Sets to publish.
+4. Set time (in minutes) for recurring.
+5. Click Start button.
+
 ### Demo video
 Click to watch the demo video:
 [![recurring_publish.py](https://j.gifs.com/lRY80V.gif)](https://ttprivatenew.s3.amazonaws.com/pulse/lorantfyt/attachments/16911630/archicad_recurring_publish_demo.mp4)
