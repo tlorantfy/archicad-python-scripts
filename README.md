@@ -8,7 +8,8 @@
 The script can schedule recurring publishing.  
 The related Archicad project must be opened before executing the script, because the script retrieves the projectdata during the start-up of the script.
 
-[Additional JSON/Python Commands Add-On](https://github.com/tlorantfy/archicad-additional-json-commands/releases) (version 25.1 or later) is required to run.
+[Additional JSON/Python Commands Add-On](https://github.com/tlorantfy/archicad-additional-json-commands/releases) (version 25.1 or later) is required to run.  
+**Requires Archicad 25 or later.**
 
 ### Features
 
