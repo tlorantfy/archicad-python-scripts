@@ -2,13 +2,14 @@ import os
 import re
 import tkinter as tk
 import subprocess
+import platform
 from archicad import ACConnection
 from tkinter import filedialog, messagebox
 from datetime import datetime, timedelta
 from threading import Timer
 
 ################################ CONFIGURATION #################################
-dialogSize = '800x450'
+dialogSize = '800x480'
 dialogTitle = 'Recurring Publish'
 textProject = 'Project:'
 textTeamworkUsername = 'Username:'
@@ -74,10 +75,24 @@ def CheckAdditionalJSONCommands ():
 		messagebox.showerror (errorMessageTitleAdditionalCommandsNotFound, errorMessageDetailsAdditionalCommandsNotFound)
 		exit ()
 
+def IsUsingMacOS ():
+	return platform.system () == 'Darwin'
+
+def IsUsingWindows ():
+	return platform.system () == 'Windows'
+
+def EscapeSpacesInPath (path):
+	if IsUsingWindows ():
+		return f'"{path}"'
+	else:
+		return path.replace (' ', '\\ ')
+
 def GetArchicadLocation ():
 	response = acc.ExecuteAddOnCommand (act.AddOnCommandId ('AdditionalJSONCommands', 'GetArchicadLocation'))
 	if not response or 'archicadLocation' not in response:
 		messagebox.showerror (errorMessageTitleCommandExecutionFailed, response)
+	if IsUsingMacOS ():
+		return f"{response['archicadLocation']}/Contents/MacOS/ARCHICAD"
 	return response['archicadLocation']
 
 def GetProjectInfo ():
@@ -136,7 +151,7 @@ class RecurringTaskScheduler:
 		ReconnectToArchicad ()
 		global conn
 		if not conn:
-			subprocess.Popen ([archicadLocation, projectInfo['projectLocation']], start_new_session=True)
+			subprocess.Popen (f"{EscapeSpacesInPath (archicadLocation)} {EscapeSpacesInPath (projectInfo['projectLocation'])}", start_new_session=True, shell=True)
 		while not conn:
 			ReconnectToArchicad ()
 
