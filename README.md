@@ -1,6 +1,6 @@
 # Ready-to-go Python scripts for Archicad
 
-[Download version 25.2](https://github.com/tlorantfy/archicad-python-scripts/archive/refs/tags/25.2.zip)
+[Download version 25.3](https://github.com/tlorantfy/archicad-python-scripts/archive/refs/tags/25.3.zip)
 
 ## recurring_publish.py
 
@@ -33,3 +33,14 @@ The related Archicad project must be opened before executing the script, because
 ### Demo video
 Click to watch the demo video:
 [![recurring_publish.py](https://j.gifs.com/lRY80V.gif)](https://ttprivatenew.s3.amazonaws.com/pulse/lorantfyt/attachments/16911630/archicad_recurring_publish_demo.mp4)
+
+## move_all_objects.py
+
+### Description
+The script moves all the elements with Object type to a new position.  
+
+### Requirements
+* **Requires Archicad 25 or later.**
+* [Additional JSON/Python Commands Add-On](https://github.com/tlorantfy/archicad-additional-json-commands) (version 25.3 or later) is required to be loaded into Archicad.
+  * [Download the Add-On for Windows](https://github.com/tlorantfy/archicad-additional-json-commands/releases/download/25.3/archicad-additional-json-commands.apx)
+  * [Download the Add-On for macOS](https://github.com/tlorantfy/archicad-additional-json-commands/releases/download/25.3/archicad-additional-json-commands.bundle.zip)
