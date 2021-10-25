@@ -44,3 +44,14 @@ The script moves all the elements with Object type to a new position.
 * [Additional JSON/Python Commands Add-On](https://github.com/tlorantfy/archicad-additional-json-commands) (version 25.3 or later) is required to be loaded into Archicad.
   * [Download the Add-On for Windows](https://github.com/tlorantfy/archicad-additional-json-commands/releases/download/25.3/archicad-additional-json-commands.apx)
   * [Download the Add-On for macOS](https://github.com/tlorantfy/archicad-additional-json-commands/releases/download/25.3/archicad-additional-json-commands.bundle.zip)
+
+## open_all_hotlinks.py
+
+### Description
+The script retrieves the list of hotlinks in the currently active project, opens the hotlinks one-by-one and performs an operation for each of them.
+
+### Requirements
+* **Requires Archicad 25 or later.**
+* [Additional JSON/Python Commands Add-On](https://github.com/tlorantfy/archicad-additional-json-commands) (version 25.4 or later) is required to be loaded into Archicad.
+  * [Download the Add-On for Windows](https://github.com/tlorantfy/archicad-additional-json-commands/releases/download/25.4/archicad-additional-json-commands.apx)
+  * [Download the Add-On for macOS](https://github.com/tlorantfy/archicad-additional-json-commands/releases/download/25.4/archicad-additional-json-commands.bundle.zip)
