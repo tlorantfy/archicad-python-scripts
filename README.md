@@ -1,6 +1,6 @@
 # Ready-to-go Python scripts for Archicad
 
-[Download version 25.3](https://github.com/tlorantfy/archicad-python-scripts/archive/refs/tags/25.3.zip)
+[Download version 26.1](https://github.com/tlorantfy/archicad-python-scripts/archive/refs/tags/26.1.zip)
 
 ## recurring_publish.py
 
@@ -55,3 +55,13 @@ The script retrieves the list of hotlinks in the currently active project, opens
 * [Additional JSON/Python Commands Add-On](https://github.com/tlorantfy/archicad-additional-json-commands) (version 25.4 or later) is required to be loaded into Archicad.
   * [Download the Add-On for Windows](https://github.com/tlorantfy/archicad-additional-json-commands/releases/download/25.4/archicad-additional-json-commands.apx)
   * [Download the Add-On for macOS](https://github.com/tlorantfy/archicad-additional-json-commands/releases/download/25.4/archicad-additional-json-commands.bundle.zip)
+
+## get_parameters_of_selected_GDLbased.py
+
+### Description
+The script lists the GDL parameters (name and value pairs) of the selected elements.
+
+### Requirements
+* **Requires Archicad 25 or later.**
+* [Additional JSON/Python Commands Add-On](https://github.com/tlorantfy/archicad-additional-json-commands) (version 26.1 or later) is required to be loaded into Archicad.
+  * [Download the Add-On for Windows](https://github.com/tlorantfy/archicad-additional-json-commands/releases/download/26.1/archicad-additional-json-commands.apx)

@@ -1,8 +1,5 @@
-import os
-import re
-import tkinter as tk
-import subprocess
-import platform
+import os, re, platform, subprocess, tkinter as tk
+from utilities import *
 from archicad import ACConnection
 from tkinter import filedialog, messagebox
 from datetime import datetime, timedelta
@@ -18,97 +15,26 @@ textOutputPath = 'Output Path:'
 textBrowseButton = 'Browse'
 textRecur1 = 'Recur every'
 textRecur2 = 'minute(s)'
-textRecur3 = 'Archicad will be closed after publishing and restarted before publishing.'
 textPublishButton = 'Start Publishing'
 textExitButton = 'Stop and Exit'
 
 textProgressWaitingForStart = 'Waiting to start...'
-textProgressRestartingArchicad = 'Restarting Archicad...'
 textProgressPublishing = 'Publishing...'
-textProgressQuitArchicad = 'Quit Archicad...'
 textProgressSecsBackTillNextPublishing = ' second(s) till next publishing...'
-
-errorMessageTitleArchicadNotFound = 'Could not find Archicad!'
-errorMessageDetailsArchicadNotFound = 'A running Archicad instance is required to initialize the schedule.'
-
-errorMessageTitleAdditionalCommandsNotFound = 'Could not find the required additional JSON commands!'
-errorMessageDetailsAdditionalCommandsNotFound = 'The latest version of AdditionalJSONCommands Add-On is required.\nDownload it from github:\nhttps://github.com/tlorantfy/archicad-additional-json-commands/releases'
-
-errorMessageTitleOutputPathInvalid = 'Invalid output path!'
-errorMessageDetailsOutputPathInvalid = 'Please input valid output path.'
-
-errorMessageTitleCommandExecutionFailed = 'Failed to execute Archicad command!'
 
 publishSubfolderPrefix = ''
 publishSubfolderDatePostfixFormat = '%Y-%m-%d_%H-%M-%S'
 ################################################################################
 
-conn = ACConnection.connect ()
-if not conn:
-	messagebox.showerror (errorMessageTitleArchicadNotFound, errorMessageDetailsArchicadNotFound)
-	exit ()
-
-acc = conn.commands
-act = conn.types
-acu = conn.utilities
-
-def ReconnectToArchicad ():
-	global conn
-	global acc
-	global act
-	global acu
-	conn = ACConnection.connect ()
-	if conn:
-		acc = conn.commands
-		act = conn.types
-		acu = conn.utilities
-
-def CheckAdditionalJSONCommands ():
-	getProjectInfoCommandId = act.AddOnCommandId ('AdditionalJSONCommands', 'GetProjectInfo')
-	publishCommandId = act.AddOnCommandId ('AdditionalJSONCommands', 'Publish')
-	teamworkReceiveCommandId = act.AddOnCommandId ('AdditionalJSONCommands', 'TeamworkReceive')
-	getArchicadLocationCommandId = act.AddOnCommandId ('AdditionalJSONCommands', 'GetArchicadLocation')
-	quitCommandId = act.AddOnCommandId ('AdditionalJSONCommands', 'Quit')
-	additionalJSONCommands = [getProjectInfoCommandId, publishCommandId, teamworkReceiveCommandId, quitCommandId, getArchicadLocationCommandId]
-
-	if not all ([acc.IsAddOnCommandAvailable (commandId) for commandId in additionalJSONCommands]):
-		messagebox.showerror (errorMessageTitleAdditionalCommandsNotFound, errorMessageDetailsAdditionalCommandsNotFound)
-		exit ()
-
-def IsUsingMacOS ():
-	return platform.system () == 'Darwin'
-
-def IsUsingWindows ():
-	return platform.system () == 'Windows'
-
-def EscapeSpacesInPath (path):
-	if IsUsingWindows ():
-		return f'"{path}"'
-	else:
-		return path.replace (' ', '\\ ')
-
-def GetArchicadLocation ():
-	response = acc.ExecuteAddOnCommand (act.AddOnCommandId ('AdditionalJSONCommands', 'GetArchicadLocation'))
-	if not response or 'archicadLocation' not in response:
-		messagebox.showerror (errorMessageTitleCommandExecutionFailed, response)
-	if IsUsingMacOS ():
-		return f"{response['archicadLocation']}/Contents/MacOS/ARCHICAD"
-	return response['archicadLocation']
-
 def GetProjectInfo ():
-	response = acc.ExecuteAddOnCommand (act.AddOnCommandId ('AdditionalJSONCommands', 'GetProjectInfo'))
-	if not response or 'projectLocation' not in response or 'projectPath' not in response or 'isTeamwork' not in response:
-		messagebox.showerror (errorMessageTitleCommandExecutionFailed, response)
+	response = ExecuteAdditionalJSONCommand ('GetProjectInfo')
+	ExitIfResponseDoesNotContain (response, ['projectLocation', 'projectPath', 'isTeamwork'])
 	return response
-
-
-CheckAdditionalJSONCommands ()
 
 archicadLocation = GetArchicadLocation ()
 projectInfo = GetProjectInfo ()
 taskScheduler = None
 publisherSetNames = []
-
 
 class ProgressUpdater:
 	def __init__ (self, secondsToCountBack):
@@ -146,32 +72,18 @@ class RecurringTaskScheduler:
 			self.timer.cancel ()
 		self.StopArchicad ()
 
-	def RestartArchicad (self):
-		progressLabel.config (text=textProgressRestartingArchicad)
-		ReconnectToArchicad ()
-		global conn
-		if not conn:
-			subprocess.Popen (f"{EscapeSpacesInPath (archicadLocation)} {EscapeSpacesInPath (projectInfo['projectLocation'])}", start_new_session=True, shell=True)
-		while not conn:
-			ReconnectToArchicad ()
-
-	def StopArchicad (self):
-		progressLabel.config (text=textProgressQuitArchicad)
-		acc.ExecuteAddOnCommand (act.AddOnCommandId ('AdditionalJSONCommands', 'Quit'))
-
 	def Execute (self):
-		self.RestartArchicad ()
+		StartArchicadAndOpenProject (archicadLocation, projectInfo['projectLocation'])
 		self.task ()
-		self.StopArchicad ()
+		StopArchicad ()
 		self.ScheduleNextExecution (timedelta (minutes=int (recurEntry.get ())).total_seconds ())
 
 def ExecutePublishCommand ():
 	progressLabel.config (text=textProgressPublishing)
 
 	if projectInfo['isTeamwork']:
-		response = acc.ExecuteAddOnCommand (act.AddOnCommandId ('AdditionalJSONCommands', 'TeamworkReceive'))
-		if response:
-			messagebox.showerror (errorMessageTitleCommandExecutionFailed, response)
+		response = ExecuteAdditionalJSONCommand ('TeamworkReceive')
+		ExitIfResponseIsError (response)
 
 	for publisherSetListIndex in publisherSetList.curselection ():
 		publisherSetName = publisherSetNames[publisherSetListIndex]
@@ -183,9 +95,8 @@ def ExecutePublishCommand ():
 									f'{publishSubfolderPrefix}{datetime.now ().strftime(publishSubfolderDatePostfixFormat)}'
 									)
 
-		response = acc.ExecuteAddOnCommand (act.AddOnCommandId ('AdditionalJSONCommands', 'Publish'), parameters)
-		if response:
-			messagebox.showerror (errorMessageTitleCommandExecutionFailed, response)
+		response = ExecuteAdditionalJSONCommand ('Publish', parameters)
+		ExitIfResponseIsError (response)
 
 def StartRecurringPublishing ():
 	executeButton['state'] = tk.DISABLED
@@ -211,7 +122,7 @@ def GetUsernameFromProjectLocation (projectLocation):
 
 def InitPublisherSetList ():
 	global publisherSetNames
-	publisherSetNames = acc.GetPublisherSetNames ()
+	publisherSetNames = ConnectArchicad ().commands.GetPublisherSetNames ()
 	publisherSetNames.sort ()
 
 	if publisherSetNames:
