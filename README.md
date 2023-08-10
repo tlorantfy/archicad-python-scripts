@@ -11,8 +11,9 @@ The related Archicad project must be opened before executing the script, because
 ### Requirements
 * **Requires Archicad 25 or later.**
 * [Additional JSON/Python Commands Add-On](https://github.com/tlorantfy/archicad-additional-json-commands) (version 25.2 or later) is required to be loaded into Archicad.
-  * [Download the Add-On for Windows](https://github.com/tlorantfy/archicad-additional-json-commands/releases/download/25.2/archicad-additional-json-commands.apx)
-  * [Download the Add-On for macOS](https://github.com/tlorantfy/archicad-additional-json-commands/releases/download/25.2/archicad-additional-json-commands.bundle.zip)
+  * [Download the Add-On for Archicad 25 for Windows platform](https://github.com/tlorantfy/archicad-additional-json-commands/releases/download/25.2/archicad-additional-json-commands.apx)
+  * [Download the Add-On for Archicad 26 for Windows platform](https://github.com/tlorantfy/archicad-additional-json-commands/releases/download/26.1/archicad-additional-json-commands.apx)
+  * [Download the Add-On for Archicad 25 for macOS platform](https://github.com/tlorantfy/archicad-additional-json-commands/releases/download/25.2/archicad-additional-json-commands.bundle.zip)
 
 ### Features
 
@@ -42,8 +43,8 @@ The script moves all the elements with Object type to a new position.
 ### Requirements
 * **Requires Archicad 25 or later.**
 * [Additional JSON/Python Commands Add-On](https://github.com/tlorantfy/archicad-additional-json-commands) (version 25.3 or later) is required to be loaded into Archicad.
-  * [Download the Add-On for Windows](https://github.com/tlorantfy/archicad-additional-json-commands/releases/download/25.3/archicad-additional-json-commands.apx)
-  * [Download the Add-On for macOS](https://github.com/tlorantfy/archicad-additional-json-commands/releases/download/25.3/archicad-additional-json-commands.bundle.zip)
+  * [Download the Add-On for Archicad 25 for Windows platform](https://github.com/tlorantfy/archicad-additional-json-commands/releases/download/25.3/archicad-additional-json-commands.apx)
+  * [Download the Add-On for Archicad 25 for macOS](https://github.com/tlorantfy/archicad-additional-json-commands/releases/download/25.3/archicad-additional-json-commands.bundle.zip)
 
 ## open_all_hotlinks.py
 
@@ -53,8 +54,8 @@ The script retrieves the list of hotlinks in the currently active project, opens
 ### Requirements
 * **Requires Archicad 25 or later.**
 * [Additional JSON/Python Commands Add-On](https://github.com/tlorantfy/archicad-additional-json-commands) (version 25.4 or later) is required to be loaded into Archicad.
-  * [Download the Add-On for Windows](https://github.com/tlorantfy/archicad-additional-json-commands/releases/download/25.4/archicad-additional-json-commands.apx)
-  * [Download the Add-On for macOS](https://github.com/tlorantfy/archicad-additional-json-commands/releases/download/25.4/archicad-additional-json-commands.bundle.zip)
+  * [Download the Add-On for Archicad 25 for Windows platform](https://github.com/tlorantfy/archicad-additional-json-commands/releases/download/25.4/archicad-additional-json-commands.apx)
+  * [Download the Add-On for Archicad 25 for macOS](https://github.com/tlorantfy/archicad-additional-json-commands/releases/download/25.4/archicad-additional-json-commands.bundle.zip)
 
 ## get_parameters_of_selected_GDLbased.py
 
@@ -62,6 +63,17 @@ The script retrieves the list of hotlinks in the currently active project, opens
 The script lists the GDL parameters (name and value pairs) of the selected elements.
 
 ### Requirements
-* **Requires Archicad 25 or later.**
+* **Requires Archicad 26 or later.**
 * [Additional JSON/Python Commands Add-On](https://github.com/tlorantfy/archicad-additional-json-commands) (version 26.1 or later) is required to be loaded into Archicad.
-  * [Download the Add-On for Windows](https://github.com/tlorantfy/archicad-additional-json-commands/releases/download/26.1/archicad-additional-json-commands.apx)
+  * [Download the Add-On for Archicad 26 for Windows platform](https://github.com/tlorantfy/archicad-additional-json-commands/releases/download/26.1/archicad-additional-json-commands.apx)
+
+## change_parameters_of_selected_GDLbased.py
+
+### Description
+The script changes the values of given GDL parameters of the selected elements.
+This examples changes the parameter with name 'gs_cont_pen' to pen with index 95.
+
+### Requirements
+* **Requires Archicad 26 or later.**
+* [Additional JSON/Python Commands Add-On](https://github.com/tlorantfy/archicad-additional-json-commands) (version 26.1 or later) is required to be loaded into Archicad.
+  * [Download the Add-On for Archicad 26 for Windows platform](https://github.com/tlorantfy/archicad-additional-json-commands/releases/download/26.1/archicad-additional-json-commands.apx)
