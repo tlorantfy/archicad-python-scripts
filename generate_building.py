@@ -8,11 +8,14 @@ slabWidth = 8.0
 slabHoleWidth = 4.0
 columnOffset = 0.3
 
-slabPolygonCoordinates     = GetRectangleCoordinates (origo['x'], origo['y'], slabWidth, slabWidth)
-slabHolePolygonCoordinates = GetRectangleCoordinates (origo['x'], origo['y'], slabHoleWidth, slabHoleWidth)
-columnOrigo2DCoordinates   = GetRectangleCoordinates (origo['x'], origo['y'], slabWidth-columnOffset, slabWidth-columnOffset)
-columnOrigo2DCoordinates  += GetRectangleCoordinates (origo['x'], origo['y'], slabHoleWidth+columnOffset, slabHoleWidth+columnOffset)
-
+slabPolygonCoordinates     = GetRectangleCoordinates (origo['x'], origo['y'],
+                                                      slabWidth, slabWidth)
+slabHolePolygonCoordinates = GetRectangleCoordinates (origo['x'], origo['y'],
+                                                      slabHoleWidth, slabHoleWidth)
+columnOrigo2DCoordinates   = GetRectangleCoordinates (origo['x'], origo['y'],
+                                                      slabWidth-columnOffset, slabWidth-columnOffset)
+columnOrigo2DCoordinates  += GetRectangleCoordinates (origo['x'], origo['y'],
+                                                      slabHoleWidth+columnOffset, slabHoleWidth+columnOffset)
 slabs = [{
     'level': origo['z'] + i * storyHeight,
     'polygonCoordinates': slabPolygonCoordinates,
@@ -28,7 +31,7 @@ ExitIfResponseIsError (response)
 response = ExecuteAdditionalJSONCommand ('CreateColumns', { 'coordinates': columnCoordinates })
 ExitIfResponseIsError (response)
 
-chairParameters = [{'name': 'Tree Model Detailed 26',
+treeParameters = [{'name': 'Tree Model Detailed 26',
                     'coordinate': {
                         'x': origo['x'], 'y': origo['y'], 'z': origo['z']
                     },
@@ -36,5 +39,5 @@ chairParameters = [{'name': 'Tree Model Detailed 26',
                         'x': slabHoleWidth, 'y': slabHoleWidth, 'z': storyHeight*5
 }}]
 
-response = ExecuteAdditionalJSONCommand ('CreateObjects', { 'objects': chairParameters })
+response = ExecuteAdditionalJSONCommand ('CreateObjects', { 'objects': treeParameters })
 ExitIfResponseIsError (response)

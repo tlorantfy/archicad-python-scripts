@@ -56,7 +56,7 @@ The script generates a skeleton building with slabs, columns and objects.
 
 ### Demo video
 Click to watch the demo video:
-![generate_building.py](https://s2.ezgif.com/tmp/ezgif-2-6c0ec89440.gif)
+![generate_building.py](https://s1.ezgif.com/tmp/ezgif-1-fad163f9a4.gif)
 
 ## move_all_objects.py
 
