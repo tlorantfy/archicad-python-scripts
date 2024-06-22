@@ -78,3 +78,11 @@ def GetArchicadLocation ():
 	if IsUsingMacOS ():
 		return f"{response['archicadLocation']}/Contents/MacOS/ARCHICAD"
 	return response['archicadLocation']
+
+def GetRectangleCoordinates (centerX, centerY, width, height):
+    return [
+        {'x': centerX + width/2, 'y': centerY - height/2},
+        {'x': centerX + width/2, 'y': centerY + height/2},
+        {'x': centerX - width/2, 'y': centerY + height/2},
+        {'x': centerX - width/2, 'y': centerY - height/2}
+    ]

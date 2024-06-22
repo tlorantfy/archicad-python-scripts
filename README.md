@@ -2,6 +2,13 @@
 
 [Download version 26.1](https://github.com/tlorantfy/archicad-python-scripts/archive/refs/tags/26.1.zip)
 
+- [recurring_publish.py](#recurring_publish.py)
+- [generate_building.py](#generate_building.py)
+- [move_all_objects.py](#move_all_objects.py)
+- [open_all_hotlinks.py](#open_all_hotlinks.py)
+- [get_parameters_of_selected_GDLbased.py](#get_parameters_of_selected_GDLbased.py)
+- [change_parameters_of_selected_GDLbased.py](#change_parameters_of_selected_GDLbased.py)
+
 ## recurring_publish.py
 
 ### Description
@@ -11,8 +18,8 @@ The related Archicad project must be opened before executing the script, because
 ### Requirements
 * **Requires Archicad 25 or later.**
 * [Additional JSON/Python Commands Add-On](https://github.com/tlorantfy/archicad-additional-json-commands) (version 25.2 or later) is required to be loaded into Archicad.
-  * [Download the Add-On for Archicad 25 for Windows platform](https://github.com/tlorantfy/archicad-additional-json-commands/releases/download/25.2/archicad-additional-json-commands.apx)
-  * [Download the Add-On for Archicad 26 for Windows platform](https://github.com/tlorantfy/archicad-additional-json-commands/releases/download/26.1/archicad-additional-json-commands.apx)
+  * [Download the Add-On for Archicad 26 for Windows platform](https://github.com/tlorantfy/archicad-additional-json-commands/releases/download/26.3/archicad-additional-json-commands.26.apx)
+  * [Download the Add-On for Archicad 25 for Windows platform](https://github.com/tlorantfy/archicad-additional-json-commands/releases/download/26.3/archicad-additional-json-commands.25.apx)
   * [Download the Add-On for Archicad 25 for macOS platform](https://github.com/tlorantfy/archicad-additional-json-commands/releases/download/25.2/archicad-additional-json-commands.bundle.zip)
 
 ### Features
@@ -35,6 +42,18 @@ The related Archicad project must be opened before executing the script, because
 Click to watch the demo video:
 [![recurring_publish.py](https://j.gifs.com/lRY80V.gif)](https://ttprivatenew.s3.amazonaws.com/pulse/lorantfyt/attachments/16911630/archicad_recurring_publish_demo.mp4)
 
+## generate_building.py
+
+### Description
+The script generates a skeleton building with slabs and columns.  
+
+### Requirements
+* **Requires Archicad 25 or later.**
+* [Additional JSON/Python Commands Add-On](https://github.com/tlorantfy/archicad-additional-json-commands) (version 26.3 or later) is required to be loaded into Archicad.
+  * [Download the Add-On for Archicad 26 for Windows platform](https://github.com/tlorantfy/archicad-additional-json-commands/releases/download/26.3/archicad-additional-json-commands.26.apx)
+  * [Download the Add-On for Archicad 25 for Windows platform](https://github.com/tlorantfy/archicad-additional-json-commands/releases/download/26.3/archicad-additional-json-commands.25.apx)
+  * [Download the Add-On for Archicad 25 for macOS platform](https://github.com/tlorantfy/archicad-additional-json-commands/releases/download/25.2/archicad-additional-json-commands.bundle.zip)
+
 ## move_all_objects.py
 
 ### Description
@@ -43,8 +62,9 @@ The script moves all the elements with Object type to a new position.
 ### Requirements
 * **Requires Archicad 25 or later.**
 * [Additional JSON/Python Commands Add-On](https://github.com/tlorantfy/archicad-additional-json-commands) (version 25.3 or later) is required to be loaded into Archicad.
-  * [Download the Add-On for Archicad 25 for Windows platform](https://github.com/tlorantfy/archicad-additional-json-commands/releases/download/25.3/archicad-additional-json-commands.apx)
-  * [Download the Add-On for Archicad 25 for macOS](https://github.com/tlorantfy/archicad-additional-json-commands/releases/download/25.3/archicad-additional-json-commands.bundle.zip)
+  * [Download the Add-On for Archicad 26 for Windows platform](https://github.com/tlorantfy/archicad-additional-json-commands/releases/download/26.3/archicad-additional-json-commands.26.apx)
+  * [Download the Add-On for Archicad 25 for Windows platform](https://github.com/tlorantfy/archicad-additional-json-commands/releases/download/26.3/archicad-additional-json-commands.25.apx)
+  * [Download the Add-On for Archicad 25 for macOS platform](https://github.com/tlorantfy/archicad-additional-json-commands/releases/download/25.2/archicad-additional-json-commands.bundle.zip)
 
 ## open_all_hotlinks.py
 
@@ -54,8 +74,9 @@ The script retrieves the list of hotlinks in the currently active project, opens
 ### Requirements
 * **Requires Archicad 25 or later.**
 * [Additional JSON/Python Commands Add-On](https://github.com/tlorantfy/archicad-additional-json-commands) (version 25.4 or later) is required to be loaded into Archicad.
-  * [Download the Add-On for Archicad 25 for Windows platform](https://github.com/tlorantfy/archicad-additional-json-commands/releases/download/25.4/archicad-additional-json-commands.apx)
-  * [Download the Add-On for Archicad 25 for macOS](https://github.com/tlorantfy/archicad-additional-json-commands/releases/download/25.4/archicad-additional-json-commands.bundle.zip)
+  * [Download the Add-On for Archicad 26 for Windows platform](https://github.com/tlorantfy/archicad-additional-json-commands/releases/download/26.3/archicad-additional-json-commands.26.apx)
+  * [Download the Add-On for Archicad 25 for Windows platform](https://github.com/tlorantfy/archicad-additional-json-commands/releases/download/26.3/archicad-additional-json-commands.25.apx)
+  * [Download the Add-On for Archicad 25 for macOS platform](https://github.com/tlorantfy/archicad-additional-json-commands/releases/download/25.2/archicad-additional-json-commands.bundle.zip)
 
 ## get_parameters_of_selected_GDLbased.py
 
@@ -65,7 +86,9 @@ The script lists the GDL parameters (name and value pairs) of the selected eleme
 ### Requirements
 * **Requires Archicad 26 or later.**
 * [Additional JSON/Python Commands Add-On](https://github.com/tlorantfy/archicad-additional-json-commands) (version 26.1 or later) is required to be loaded into Archicad.
-  * [Download the Add-On for Archicad 26 for Windows platform](https://github.com/tlorantfy/archicad-additional-json-commands/releases/download/26.1/archicad-additional-json-commands.apx)
+  * [Download the Add-On for Archicad 26 for Windows platform](https://github.com/tlorantfy/archicad-additional-json-commands/releases/download/26.3/archicad-additional-json-commands.26.apx)
+  * [Download the Add-On for Archicad 25 for Windows platform](https://github.com/tlorantfy/archicad-additional-json-commands/releases/download/26.3/archicad-additional-json-commands.25.apx)
+  * [Download the Add-On for Archicad 25 for macOS platform](https://github.com/tlorantfy/archicad-additional-json-commands/releases/download/25.2/archicad-additional-json-commands.bundle.zip)
 
 ## change_parameters_of_selected_GDLbased.py
 
@@ -76,4 +99,6 @@ This examples changes the parameter with name 'gs_cont_pen' to pen with index 95
 ### Requirements
 * **Requires Archicad 26 or later.**
 * [Additional JSON/Python Commands Add-On](https://github.com/tlorantfy/archicad-additional-json-commands) (version 26.1 or later) is required to be loaded into Archicad.
-  * [Download the Add-On for Archicad 26 for Windows platform](https://github.com/tlorantfy/archicad-additional-json-commands/releases/download/26.1/archicad-additional-json-commands.apx)
+  * [Download the Add-On for Archicad 26 for Windows platform](https://github.com/tlorantfy/archicad-additional-json-commands/releases/download/26.3/archicad-additional-json-commands.26.apx)
+  * [Download the Add-On for Archicad 25 for Windows platform](https://github.com/tlorantfy/archicad-additional-json-commands/releases/download/26.3/archicad-additional-json-commands.25.apx)
+  * [Download the Add-On for Archicad 25 for macOS platform](https://github.com/tlorantfy/archicad-additional-json-commands/releases/download/25.2/archicad-additional-json-commands.bundle.zip)
