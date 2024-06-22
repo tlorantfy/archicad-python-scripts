@@ -39,7 +39,6 @@ The related Archicad project must be opened before executing the script, because
 5. Click Start button.
 
 ### Demo video
-Click to watch the demo video:
 ![recurring_publish.py](https://j.gifs.com/lRY80V.gif)
 
 ## generate_building.py
@@ -55,7 +54,6 @@ The script generates a skeleton building with slabs, columns and objects.
   * [Download the Add-On for Archicad 25 for macOS platform](https://github.com/tlorantfy/archicad-additional-json-commands/releases/download/25.2/archicad-additional-json-commands.bundle.zip)
 
 ### Demo video
-Click to watch the demo video:
 ![generate_building.py](https://s1.ezgif.com/tmp/ezgif-1-fad163f9a4.gif)
 
 ## move_all_objects.py
