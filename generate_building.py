@@ -16,7 +16,7 @@ columnOrigo2DCoordinates  += GetRectangleCoordinates (origo['x'], origo['y'], sl
 slabs = [{
     'level': origo['z'] + i * storyHeight,
     'polygonCoordinates': slabPolygonCoordinates,
-    'holes': [{'polygonCoordinates': slabHolePolygonCoordinates}] if i != 0 else []
+    'holes': [{'polygonCoordinates': slabHolePolygonCoordinates}]
 } for i in range(5)]
 
 columnCoordinates = [{
@@ -26,4 +26,15 @@ columnCoordinates = [{
 response = ExecuteAdditionalJSONCommand ('CreateSlabs', { 'slabs': slabs })
 ExitIfResponseIsError (response)
 response = ExecuteAdditionalJSONCommand ('CreateColumns', { 'coordinates': columnCoordinates })
+ExitIfResponseIsError (response)
+
+chairParameters = [{'name': 'Tree Model Detailed 26',
+                    'coordinate': {
+                        'x': origo['x'], 'y': origo['y'], 'z': origo['z']
+                    },
+                    'dimensions': {
+                        'x': slabHoleWidth, 'y': slabHoleWidth, 'z': storyHeight*5
+}}]
+
+response = ExecuteAdditionalJSONCommand ('CreateObjects', { 'objects': chairParameters })
 ExitIfResponseIsError (response)
